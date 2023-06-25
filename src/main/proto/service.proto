@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package com.knitehias.grpc.strlen;
+import "google/api/annotations.proto";
+option java_multiple_files = true;
+
+service StrLenService {
+  rpc Len (StrRequest) returns (StrReply) {
+    option (google.api.http) = {
+      get: "/len"
+    };
+  }
+}
+
+message StrRequest {
+  string str = 1;
+}
+
+message StrReply {
+  int32 len = 1;
+}
