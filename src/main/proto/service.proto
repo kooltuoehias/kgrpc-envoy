@@ -7,7 +7,7 @@ option java_multiple_files = true;
 service StrLenService {
   rpc Len (StrRequest) returns (StrReply) {
     option (google.api.http) = {
-      get: "/len"
+      get: "/v1/len/{str}"
     };
   }
 }
